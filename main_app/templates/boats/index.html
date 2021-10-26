@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Boat List</h1>
+
+{% for boat in boats %}
+  <div class="card">
+    <a href="{% url 'detail' boat.id %}">>
+        <div class="card-content">
+            <span class="card-title">{{boat.name }}</span>
+            <p>Registration number: {{ boat.registration_number }}</p>
+            <p>Registration Date: {{ boat.registration_date }}</p> 
+            <p>comments: {{boat.comments}}</p>      
+        </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
